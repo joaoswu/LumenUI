@@ -21,7 +21,7 @@ A highly optimized, professional, and visually stunning "skeet/gamesense" style 
     *   Toggleable fade/scale animations for instant opening/closing.
     *   Complete `Unload` button to clean up all connections and UI elements.
 *   **Dynamic Watermark System**:
-    *   Accepts a prefix (e.g. `Reptillian V5`) and automatically appends the local player's Roblox Display Name, real-time FPS, and round-trip Ping (latency).
+    *   Accepts a prefix (e.g. `LumenV5`) and automatically appends the local player's Roblox Display Name, real-time FPS, and round-trip Ping (latency).
     *   Automatically updates every 0.5 seconds using a background loop.
 *   **Advanced Toggle Controls**: Checkbox toggles can optionally house **inline keybinds** and **inline color pickers** on the same row.
 *   **Intro Loader Screen**: Animated splash with an accent progress bar and live status text, driven manually via a controller, shown before the window opens.
@@ -38,24 +38,24 @@ A highly optimized, professional, and visually stunning "skeet/gamesense" style 
 
 ```lua
 -- Load the library
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/your-repo/library.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/joaoswu/LumenUI/refs/heads/main/library.lua"))()
 
--- Set a dynamic Watermark (Displays: Reptillian V5 | [DisplayName] | FPS: [FPS] | Ping: [Ping]ms)
-Library:SetWatermark("Reptillian V5")
+-- Set a dynamic Watermark (Displays: Lumen | [DisplayName] | FPS: [FPS] | Ping: [Ping]ms)
+Library:SetWatermark("LumenV5")
 
 -- Enable the floating keybind list
 Library:SetKeybindListVisible(true)
 
 -- Send toast notifications
 Library:Notify({
-    Title = "Reptillian V5 Loaded",
+    Title = "LumenV5",
     Content = "Press [Insert] to toggle menu",
     Duration = 8
 })
 
 -- Create the main window
 local Window = Library:CreateWindow({
-    Name = "Reptillian V5",
+    Name = "LumenV5",
     Info = "Ultimate Edition (June 2026)"
 })
 
@@ -206,14 +206,14 @@ Shows an intro/splash loader **before** `CreateWindow`. Returns a controller. No
     *   `:Finish(callback)` — fades the loader out, destroys it, then runs `callback`.
 
 ```lua
-local loader = Library:CreateLoader({ Title = "Reptillian V6", Subtitle = "Initializing..." })
+local loader = Library:CreateLoader({ Title = "LumenV5", Subtitle = "Initializing..." })
 task.spawn(function()
     for i = 0, 100, 10 do
         loader:SetProgress(i, "Loading module " .. i .. "%")
         task.wait(0.1)
     end
     loader:Finish(function()
-        local Window = Library:CreateWindow({ Name = "Reptillian V6" })
+        local Window = Library:CreateWindow({ Name = "LumenV5" })
         -- ...build tabs/sections here...
     end)
 end)
